@@ -1,8 +1,8 @@
 import React from 'react'
 import './scss/Cards.css'
 
-const Cards = (props) => {
-    const {name, email, id} = props;
+const Cards = ({name, email, id}) => {
+
     return (
         <div className='card'>
             <img alt='robot' src={`https://robohash.org/${id}?200x200`} />
@@ -10,7 +10,6 @@ const Cards = (props) => {
                 <h2>{name}</h2>
                 <p>{email}</p>
             </div>
-
         </div>
     )
 }
