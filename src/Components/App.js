@@ -1,9 +1,8 @@
 import React from 'react'
 import CardList from './CardList'
-import { robots } from './robots'
+import { robots } from '../robots'
 import Search from './Search'
 import BackgroundGenerator from './BackgroundGenerator'
-import './index.css'
 import Background from './Background.js'
 
 class App extends React.Component {
@@ -12,7 +11,7 @@ class App extends React.Component {
         this.state = {
             bots: robots,
             searchfield: '',
-            color1: 'blue'
+            color1: 'lightsteelblue'
         }
     }
 
@@ -22,6 +21,7 @@ class App extends React.Component {
 
     onColorChange = (e) => {
         this.setState({color1: e.target.value})
+        console.log(this.state.color1)
     }
 
     render(){
@@ -32,13 +32,19 @@ class App extends React.Component {
         const bodyColor = {backgroundColor: this.state.color1};
 
         return (
-            <React.StrictMode>
-                <Background color={bodyColor}>
+            <Background color={bodyColor}>
+                <div className='main-header'>Robot Friends</div>
+                <div className='main-copy'>A placeholder like web app that displays arbitrary accounts with a working search bar and a color picker to choose the background color</div>
+
+                <div className='hr-cont1'>
                     <Search searchChange={this.onSearchChange}/>
-                    <CardList robots={filteredRobots}/>
                     <BackgroundGenerator colorChange={this.onColorChange}/>
-                </Background>
-            </React.StrictMode>
+                </div>
+
+                <div id="footer"></div>
+                
+                <CardList robots={filteredRobots}/>
+            </Background>
         )
     }
 }
