@@ -41,7 +41,8 @@ class App extends React.Component {
         return (
             <Background color={bodyColor}>
                 <div className='main-header'>Robot Friends</div>
-                <div className='main-copy'>A placeholder-like web app that displays arbitrary accounts with a working search bar and a color picker to choose the background color</div>
+                <div className='main-copy'>A placeholder-like web app that displays arbitrary 
+                accounts accessed through JSON. It includes a working search bar that dynamically alters the listed accounts</div>
 
                 <div className='hr-cont1'>
                     <Search searchChange={this.onSearchChange}/>
