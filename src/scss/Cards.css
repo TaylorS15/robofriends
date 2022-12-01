@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  display: block;
+  text-align: center;
+  background-color: lightgreen;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 1px 1px 10px black;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 5px 5px 20px black;
+}/*# sourceMappingURL=Cards.css.map */

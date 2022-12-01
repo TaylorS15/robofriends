@@ -1,28 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
-import React from 'react';
+import React from 'react'
+import CardList from './CardList'
+import { robots } from './robots'
+import Search from './Search'
+import BackgroundGenerator from './BackgroundGenerator'
+import './index.css'
+import Background from './Background.js'
 
 class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learning React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    constructor() {
+        super()
+        this.state = {
+            bots: robots,
+            searchfield: '',
+            color1: 'blue'
+        }
+    }
+
+    onSearchChange = (e) => {
+        this.setState({searchfield: e.target.value})
+    }
+
+    onColorChange = (e) => {
+        this.setState({color1: e.target.value})
+    }
+
+    render(){
+        const filteredRobots = this.state.bots.filter(robot => {
+            return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+        })
+
+        const bodyColor = {backgroundColor: this.state.color1};
+
+        return (
+            <React.StrictMode>
+                <Background color={bodyColor}>
+                    <Search searchChange={this.onSearchChange}/>
+                    <CardList robots={filteredRobots}/>
+                    <BackgroundGenerator colorChange={this.onColorChange}/>
+                </Background>
+            </React.StrictMode>
+        )
+    }
 }
 
 export default App;
