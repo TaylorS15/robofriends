@@ -82,7 +82,7 @@
 .card {
     display: block;
     text-align: center;
-    background-color: lightgreen;
+    background-color:#FDF0D5;
     border-radius: .5rem;
     padding: 1rem;
     margin: 1rem;
@@ -93,6 +93,14 @@
         transform: translate(-5px, -5px);
         box-shadow: 5px 5px 20px black;
     }
+}
+
+.card > div > h2 {
+    color: #150F2E;
+}
+
+.card > div > p {
+    color:#F0544F;
 }
 
 #footer {
