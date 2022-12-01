@@ -1,9 +1,9 @@
 import React from 'react'
-import './scss/Background.css'
+import '../scss/Components.css'
 
 const Background = (props) => {
     return (
-        <div className="bg-cont" style={props.color}>
+        <div className="b-cont" style={props.color}>
             {props.children}
         </div>
     )

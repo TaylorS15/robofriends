@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+.b-cont{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Raleway;
+    padding: 0 12vw;
+}
+
+//Main
+.main-header {
+    text-align: left;
+    font-size: 300%;
+    color: #FDF0D5;
+    margin: 5rem 0 2rem;
+}
+
+.main-copy {
+    color: #F0544F;
+    text-align: left;
+    font-size: 200%;
+    width: 40vw;
+}
+
+.hr-cont1 {
+    margin: 5rem 0 2rem;
+    border-radius: .5rem;
+    color: #FDF0D5;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0;
+    gap: 5vw;
+}
+
+//Search
+.sr-cont {
+    display: flex;
+    justify-content: center;
+    background-color: #F0544F;
+    padding: 3rem;
+    border-radius: .5rem;
+}
+
+.sr-cont > input {
+    border-radius: .5rem;
+    border: none;
+    font-size: larger;
+    text-align: center;
+    padding: 1rem;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.bg-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F0544F;
+    padding: 3rem;
+    border-radius: .5rem;
+}
+
+.bg-cont > h1 {
+    margin: 0;
+}
+
+//Cards
+.cr-cont {
+    overflow-y:scroll;
+    height: 35vh;
+    background-color:#F0544F;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: inset 0 0 30px black;
+    border-radius: .5rem;
+    padding: 3rem;
+}
+
+.card {
+    display: block;
+    text-align: center;
+    background-color: lightgreen;
+    border-radius: .5rem;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 1px 1px 10px black;
+    transition: transform .2s, box-shadow .2s;
+
+    &:hover {
+        transform: translate(-5px, -5px);
+        box-shadow: 5px 5px 20px black;
+    }
+}
+
+#footer {
+    margin-top: auto;
+    height: 1px;
+    align-self: flex-end;
+}

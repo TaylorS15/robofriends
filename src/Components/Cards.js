@@ -1,11 +1,11 @@
 import React from 'react'
-import './scss/Cards.css'
+import '../scss/Components.css'
 
 const Cards = ({name, email, id}) => {
 
     return (
         <div className='card'>
-            <img alt='robot' src={`https://robohash.org/${id}?200x200`} />
+            <img alt='robot' src={`https://robohash.org/${id}?150x150`} />
             <div>
                 <h2>{name}</h2>
                 <p>{email}</p>
