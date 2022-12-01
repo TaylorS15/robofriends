@@ -3,6 +3,8 @@ import CardList from './CardList'
 import { robots } from './robots'
 import Search from './Search'
 import BackgroundGenerator from './BackgroundGenerator'
+import './index.css'
+import Background from './Background.js'
 
 class App extends React.Component {
     constructor() {
@@ -10,18 +12,16 @@ class App extends React.Component {
         this.state = {
             bots: robots,
             searchfield: '',
-            color1: ''
+            color1: 'blue'
         }
     }
 
     onSearchChange = (e) => {
         this.setState({searchfield: e.target.value})
-        console.log(this.searchfield)
     }
 
     onColorChange = (e) => {
         this.setState({color1: e.target.value})
-        console.log(this.color1)
     }
 
     render(){
@@ -29,11 +29,15 @@ class App extends React.Component {
             return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
         })
 
+        const bodyColor = {backgroundColor: this.state.color1};
+
         return (
             <React.StrictMode>
-                <Search searchChange={this.onSearchChange}/>
-                <CardList robots={filteredRobots}/>
-                <BackgroundGenerator colorChange={this.onColorChange} value={this.state.color1}/>
+                <Background color={bodyColor}>
+                    <Search searchChange={this.onSearchChange}/>
+                    <CardList robots={filteredRobots}/>
+                    <BackgroundGenerator colorChange={this.onColorChange}/>
+                </Background>
             </React.StrictMode>
         )
     }
