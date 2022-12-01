@@ -1,6 +1,5 @@
 import React from 'react'
 import CardList from './CardList'
-import { robots } from '../robots'
 import Search from './Search'
 import BackgroundGenerator from './BackgroundGenerator'
 import Background from './Background.js'
@@ -9,10 +8,16 @@ class App extends React.Component {
     constructor() {
         super()
         this.state = {
-            bots: robots,
+            bots: [],
             searchfield: '',
-            color1: 'lightsteelblue'
+            color1: '#150F2E'
         }
+    }
+
+    componentDidMount() {    
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(users => this.setState({ bots:  users}))
     }
 
     onSearchChange = (e) => {
@@ -25,25 +30,24 @@ class App extends React.Component {
     }
 
     render(){
-        const filteredRobots = this.state.bots.filter(robot => {
-            return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+        const { bots, searchfield, color1 } = this.state;
+
+        const filteredRobots = bots.filter(robot => {
+            return robot.name.toLowerCase().includes(searchfield.toLowerCase())
         })
 
-        const bodyColor = {backgroundColor: this.state.color1};
+        const bodyColor = {backgroundColor: color1};
 
         return (
             <Background color={bodyColor}>
                 <div className='main-header'>Robot Friends</div>
-                <div className='main-copy'>A placeholder like web app that displays arbitrary accounts with a working search bar and a color picker to choose the background color</div>
+                <div className='main-copy'>A placeholder-like web app that displays arbitrary accounts with a working search bar and a color picker to choose the background color</div>
 
                 <div className='hr-cont1'>
                     <Search searchChange={this.onSearchChange}/>
-                    <BackgroundGenerator colorChange={this.onColorChange}/>
+                    {/* <BackgroundGenerator colorChange={this.onColorChange}/> */}
                 </div>
-
-                <div id="footer"></div>
-                
-                <CardList robots={filteredRobots}/>
+                {this.state.bots.length === 0 ? <div className='main-header'>Loading...</div> : <CardList robots={filteredRobots}/>}
             </Background>
         )
     }

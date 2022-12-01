@@ -9,30 +9,36 @@
 
 //Main
 .main-header {
-    margin: 2rem;
-    text-align: center;
+    text-align: left;
     font-size: 300%;
+    color: #FDF0D5;
+    margin: 5rem 0 2rem;
 }
 
 .main-copy {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    color: #F0544F;
+    text-align: left;
     font-size: 200%;
     width: 40vw;
 }
 
 .hr-cont1 {
+    margin: 5rem 0 2rem;
+    border-radius: .5rem;
+    color: #FDF0D5;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 3rem;
+    padding: 1.5rem 0;
+    gap: 5vw;
 }
 
 //Search
 .sr-cont {
     display: flex;
     justify-content: center;
+    background-color: #F0544F;
+    padding: 3rem;
+    border-radius: .5rem;
 }
 
 .sr-cont > input {
@@ -51,10 +57,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #F0544F;
+    padding: 3rem;
+    border-radius: .5rem;
+}
+
+.bg-cont > h1 {
+    margin: 0;
 }
 
 //Cards
 .cr-cont {
+    overflow-y:scroll;
+    height: 35vh;
+    background-color:#F0544F;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
