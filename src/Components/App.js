@@ -1,7 +1,7 @@
 import React from 'react'
 import CardList from './CardList'
 import Search from './Search'
-import BackgroundGenerator from './BackgroundGenerator'
+// import BackgroundGenerator from './BackgroundGenerator'
 import Background from './Background.js'
 
 class App extends React.Component {
