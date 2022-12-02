@@ -1,7 +1,7 @@
 import React from 'react'
 import CardList from './CardList'
 import Search from './Search'
-import BackgroundGenerator from './BackgroundGenerator'
+// import BackgroundGenerator from './BackgroundGenerator'
 import Background from './Background.js'
 
 class App extends React.Component {
@@ -48,7 +48,7 @@ class App extends React.Component {
                     <Search searchChange={this.onSearchChange}/>
                     {/* <BackgroundGenerator colorChange={this.onColorChange}/> */}
                 </div>
-                {this.state.bots.length === 0 ? <div className='main-header'>Loading...</div> : <CardList robots={filteredRobots}/>}
+                {!this.state.bots.length ? <div className='main-header'>Loading...</div> : <CardList robots={filteredRobots}/>}
             </Background>
         )
     }
